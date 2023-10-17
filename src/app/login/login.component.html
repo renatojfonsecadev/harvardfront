@@ -1,0 +1,33 @@
+<mat-toolbar color="primary">
+    <span>Acesso ao Sistema</span>
+  </mat-toolbar>
+  <mat-card class="my-card">
+     <mat-card-content>
+        <form class="my-form">
+         <table>
+            <tr>
+               <td>
+           <mat-form-field class="full-width">
+              <mat-label>E-mail</mat-label>
+              <input  matInput  type="email" placeholder="ex.: contato@email.com" name="email">
+           </mat-form-field>
+           <br>
+           <mat-form-field class="full-width">
+              <mat-label>Senha</mat-label>
+              <input type="password" matInput  placeholder="Angular#2022" name="password">
+           </mat-form-field>
+                  
+         </td>
+         <td>
+
+                    <img src="./assets/img/harvard-logo-512x512.png" />              
+         </td>
+
+      </tr>
+      </table>
+        </form>
+     </mat-card-content>
+     <mat-card-actions>
+        <button mat-raised-button routerLink="/menu2"  color="primary">Login</button>
+     </mat-card-actions>
+  </mat-card>

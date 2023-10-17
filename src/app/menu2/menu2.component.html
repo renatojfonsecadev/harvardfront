@@ -1,0 +1,77 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+    <mat-toolbar>Menu</mat-toolbar>
+
+  <!-- Inclui automaticamente epaçamento entre as opções do manu lateral -->
+    <mat-menu #menu="matMenu">
+    </mat-menu>
+
+    <mat-nav-list>
+      <button mat-menu-item>
+        <mat-icon>home</mat-icon>
+        <span>Home</span>
+      </button>
+
+      <button mat-menu-item routerLink="/listausuarios">
+        <mat-icon>list</mat-icon>
+        <span>Lista de Usuários</span>
+      </button>
+
+      <button mat-menu-item routerLink="/usuario">
+        <mat-icon>calendar_today</mat-icon>
+        <span>Calendário</span>
+      </button>
+      <button mat-menu-item routerLink="/usuario">
+        <mat-icon>person_add</mat-icon>
+        <span>Usuário</span>              
+      </button>        
+
+      <button mat-menu-item routerLink="/cursos">
+        <mat-icon>school</mat-icon>
+        <span>Cursos</span>                      
+      </button>
+
+      <button mat-menu-item routerLink="/listausuarios">
+        <mat-icon>task_alt</mat-icon>
+        <span>Tarefas</span>                      
+      </button>
+
+      <button mat-menu-item routerLink="/usuario">
+        <mat-icon>contact_support</mat-icon>
+        Suporte
+      </button>
+
+      <button mat-menu-item routerLink="/usuario">
+        <mat-icon>copyright</mat-icon>
+        <span>Copyright</span>
+      </button>
+      <br>
+      <button mat-menu-item routerLink="/login">
+        <mat-icon>exit_to_app</mat-icon>
+        Sair
+      </button>
+      
+    </mat-nav-list>
+  </mat-sidenav>
+
+
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+
+      <mat-icon>workspace_premium</mat-icon>
+      <span>Harvard Study - Menu</span>
+    </mat-toolbar>
+    <!-- Add Content Here -->
+  </mat-sidenav-content>
+</mat-sidenav-container>

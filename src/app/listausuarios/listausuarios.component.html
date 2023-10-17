@@ -1,0 +1,53 @@
+<mat-toolbar color="primary">
+  <span>Harvard Study - Lista de Usuários</span>
+</mat-toolbar>
+
+<div class="main-content">
+  <div class="container-fluid">
+      <div class="row">
+<br>
+          <div class="col-md-12">
+              <div class="card card-plain">
+                  <div class="card-body">
+                      <div class="table-responsive">
+                          <table class="table table-hover">
+                              <thead class="">
+                                  <th>
+                                      ID
+                                  </th>
+                                  <th>
+                                      Nome
+                                  </th>
+                                  <th>
+                                      CPF
+                                  </th>
+                                  <th>
+                                      CEP
+                                  </th>
+                              </thead>
+                              <tbody>
+                                  <tr *ngFor="let usuario of Usuario">
+                                  <td>{{ usuario.id }}</td>
+                                  <td>{{ usuario.nome }}</td>
+                                  <td>{{ usuario.cpf }}</td>
+                                  <td>{{ usuario.cep }}</td>
+                                  <td>
+                                    <span class="Zedit" mat-raised-button routerLink="/usuarios/{{ usuario.id }}" >Edit </span>
+                                  </td>
+                                  </tr>
+                              </tbody>
+
+
+                          </table>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <br>
+  <mat-card-actions>
+    <button mat-raised-button routerLink="/menu2"  color="primary">Voltar</button>
+ </mat-card-actions>
+
+</div>

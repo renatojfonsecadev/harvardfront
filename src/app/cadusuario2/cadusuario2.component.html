@@ -1,0 +1,84 @@
+<mat-toolbar color="primary">
+  <span>Harvard Study - Cadastro de Usuários</span>
+</mat-toolbar>
+<br>
+<mat-form-field class="example-full-width">
+  <mat-label>Escolha seu Perfil(Desabilitado)</mat-label>
+  <input matInput disabled value="Aluno Padrão">
+</mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Nome Completo</mat-label>
+    <input [(ngModel)]="usuarioData.nome"  matInput placeholder="Ex.John Pedro"> 
+  </mat-form-field>
+  <br>
+
+  <table class="example-full-width" cellspacing="0"><tr>
+    <td><mat-form-field class="example-full-width">
+      <mat-label>CEP</mat-label>
+      <input [(ngModel)]="usuarioData.cep"  matInput #postalCode maxlength="9" placeholder="Ex. 11310-130">
+      <mat-hint align="end">{{postalCode.value.length}} / 9</mat-hint>
+    </mat-form-field></td>
+      <button mat-stroked-button color="primary" (click)="addUsuario(usuarioData)"><mat-icon>search</mat-icon> </button>
+    <td><mat-form-field class="example-full-width">
+      <mat-label>CPF</mat-label>
+      <input [(ngModel)]="usuarioData.cpf" matInput placeholder="Ex. San Francisco">
+    </mat-form-field></td>
+    <td><mat-form-field class="example-full-width">
+      <mat-label>Data Nascimento</mat-label>
+      <input matInput [matDatepicker]="picker">
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field></td>
+  </tr></table>
+  <mat-form-field class="example-full-width">
+    <mat-label>Endereço</mat-label>
+    <input [(ngModel)]="usuarioData.nome"  matInput placeholder="Rua da Praia, 12345"> 
+  </mat-form-field>
+  <table class="example-full-width" cellspacing="0"><tr>
+    <td><mat-form-field class="example-full-width">
+      <mat-label>Bairro</mat-label>
+      <input [(ngModel)]="usuarioData.cep"  matInput #postalCode placeholder="Ex. Bitarú">
+    </mat-form-field></td>
+    <td><mat-form-field class="example-full-width">
+      <mat-label>Cidade</mat-label>
+      <input [(ngModel)]="usuarioData.cpf" matInput placeholder="Ex. São Vicente">
+    </mat-form-field></td>
+    <td><mat-form-field class="example-full-width">
+      <mat-label>Estado</mat-label>
+      <input [(ngModel)]="usuarioData.cpf" matInput placeholder="Ex. São Paulo">
+    </mat-form-field></td>
+  </tr></table>
+
+  <table class="example-full-width" cellspacing="0"><tr>
+    <td><mat-form-field class="example-full-width">
+      <mat-label>telefone</mat-label>
+      <input [(ngModel)]="usuarioData.cep"  matInput #postalCode placeholder="Ex. Bitarú">
+    </mat-form-field></td>
+    <td><mat-form-field class="example-full-width">
+      <mat-label>Genero</mat-label>
+      <select matNativeControl >
+          <option value="volvo">Masculino</option>
+          <option value="saab">Feminino</option>
+          <option value="mercedes">Sem resposta</option>
+        </select>
+    </mat-form-field></td>
+    <td><mat-form-field class="example-full-width">
+      <mat-label>e-mail</mat-label>
+      <input [(ngModel)]="usuarioData.cpf" matInput placeholder="Ex. joao@conectadigitalsolutions.com">
+    </mat-form-field></td>
+    <td><mat-form-field class="example-full-width">
+      <mat-label>Senha</mat-label>
+      <input [(ngModel)]="usuarioData.cpf" matInput placeholder="senha" type="password">
+    </mat-form-field></td>
+  </tr></table>
+
+<br>
+<mat-card-actions>
+  <button mat-raised-button color="primary" (click)="updateUsuario()">Salvar</button>
+</mat-card-actions>
+
+    <mat-card-actions>
+      <button mat-stroked-button routerLink="/menu2"  color="primary">Voltar</button>
+   </mat-card-actions>
